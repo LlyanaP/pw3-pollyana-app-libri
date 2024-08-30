@@ -1,33 +1,43 @@
+/*Importa os componentes de navegação das paginas*/
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+
+
 /* Importa o Arquivo do CSS*/
 import './App.css'
 
-/* Importa o Componente Card de Livro */
-// import CardBooks from './components/CardBooks'
-
-/*Importa o Aquivo de Imagem da Capa do Livro */
-import capaLivro from './assets/livros/cavernas_aco.jpg'
 
 /* Importa o Componente Menu */
 import NavBar from './components/layout/NavBar'
+
+/* Importa o componente de Container*/
+import Container from './components/layout/Container'
+
+import Home from './components/pages/Home'
+
+import ListBooks from './components/pages/ListBooks'
+
+import CreateBooks from './components/pages/CreateBooks'
+
 
 function App() {
 
 
   return (
     <>
-      <NavBar/>
-      {/* <CardBooks
-        titulo='As Cavernas de Aço'
-        autor='Isaac Azimov'
-        imagem={capaLivro}/> */}
+      {/*Estrutura de navegação*/}
+      <BrowserRouter>
+        <Container>
+          <Routes>
+            <Route path='/' element={<NavBar/>}>
+            <Route path='/' element = {<Home/>}/>
+            <Route path='/listBooks' element = {<ListBooks/>}/>
+            <Route path='/createBooks' element = {<CreateBooks/>}/>  
 
-      {/* <CardBooks
-        titulo='O Sol Desvelado'
-        autor='Isaac Azimov'/>
-
-      <CardBooks
-        titulo='O Senhor dos Áneis: A Sociedade do Anel'
-        autor='J. R. R. Tolkien'/> */}
+            </Route>
+          </Routes>
+        </Container>
+      </BrowserRouter>
     </>
   )
 }
