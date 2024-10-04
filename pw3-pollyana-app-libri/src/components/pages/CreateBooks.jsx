@@ -1,9 +1,10 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import style from "./CreateBooks.module.css";
 import Input from "../forms/Input";
 import Select from "../forms/Select";
 import Button from "../forms/Button";
-import { useState, useEffect } from "react";
+
 
 const CreateBooks = () =>{
 
@@ -74,10 +75,10 @@ const CreateBooks = () =>{
         )
 }
         /* FUNÇÃO DE SUBMIT */
-    function submit(event) {
-    event.preventDefault();
-    createBook(book);
-}
+        function submit(event) {
+        event.preventDefault();
+        createBook(book);
+    }
 
 
 
@@ -85,7 +86,7 @@ const CreateBooks = () =>{
         <section className={style.create_books_container}>
             <h1>Cadastro de livros</h1>
 
-        <form submit={submit}>
+        <form onSubmit={submit}>
 
             <Input
                 type="text"
@@ -105,7 +106,7 @@ const CreateBooks = () =>{
 
             <Input
                 type="text"
-                name="descrição_livro"
+                name="descricao_livro"
                 placeHolder="Digite a descrição do livro"
                 text="Descrição do livro"
                 handlerChangeBooks={handlerChangeBook}
