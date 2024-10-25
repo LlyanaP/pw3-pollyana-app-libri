@@ -12,7 +12,7 @@ function Select({type, name, text, options, handleChangeCategory}){
                 {
                     options.map((option)=>{
                     //    console.log( option.cod_categoria + ' - ' + option.nome_categoria) 
-                       return <option value={option.cod_categoria}>{option.cod_categoria}</option>
+                    return <option value={option.cod_categoria} key={option.cod_categoria}>{option.nome_categoria}</option>
                     })
                 }
     

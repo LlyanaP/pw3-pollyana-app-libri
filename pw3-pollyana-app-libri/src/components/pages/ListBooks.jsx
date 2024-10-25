@@ -49,10 +49,10 @@ const ListBooks=()=>{
                     books.map((book)=>(
                         // console.log(book.nome_livro)
                         <BookCard
-                            cod_livro={book.cod_livro}
                             titulo={book.nome_livro}
                             autor={book.autor_livro}
                             imagem={cavernas}
+                            cod_livro={book.cod_livro}
                             key={book.cod_livro}
                         />
                     ))
