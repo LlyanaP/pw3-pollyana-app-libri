@@ -21,6 +21,10 @@ import CreateBooks from './components/pages/CreateBooks'
 
 import DetailBook from './components/pages/DetailBook'
 
+import DeleteBook from './components/pages/DeleteBook'
+
+import UpdateBooks from './components/pages/UpdateBooks'
+
 
 function App() {
 
@@ -36,7 +40,8 @@ function App() {
             <Route path='/listBooks' element = {<ListBooks/>}/>
             <Route path='/createBooks' element = {<CreateBooks/>}/>  
             <Route path='/Detailbook/:cod_livro' element ={<DetailBook/>}/>
-
+            <Route path='/deleteBook/:cod_livro' element={<DeleteBook/>} />
+            <Route path='/updateBook/:cod_livro' element={<UpdateBooks/>} />
             </Route>
           </Routes>
         </Container>
